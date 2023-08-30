@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://ssc.nemoq.se/Booking/Booking/Index/SSC -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <title>SSC</title>
+
+    
+    <link rel="stylesheet" href="./payment-IDCard_files/base.css">
+    <link rel="stylesheet" href="./payment-IDCard_files/jquery-ui.min.css">
+    <style type="text/css">
+    body
+    {
+        background-color:#f4f9fb !important;
+        font-family: Open Sans,sans-serif
+    }
+    a
+    {
+        font-family: Open Sans,sans-serif
+    }
+    .navbar, .navbar-inner
+    {
+        background-color:#ffffff !important;
+        box-shadow:2px 2px 4px #c3c7c0;
+        margin-bottom:15px;
+
+    }
+    #Main
+    {
+        margin-left:10px;
+        margin-right:10px;
+    }
+    #ContentColumn
+    {
+
+        background-color:#ffffff !important;
+        box-shadow:0px 0px 4px 1px #c3c7c0;
+    }
+    div.Box h1,h2,h3, div.Box, .breadcrumb
+    {
+        background-color:#f7963b !important;
+        border-color:#f7963b !important;
+        /*custom*/
+         border-width:2px !important;
+        border-radius:0 !important;
+        -webkit-border-radius:0 !important;
+        -moz-border-radius:0 !important;
+        border-color:#c3c7c0 !important;
+
+    }
+    Box h1,h2,h3,h4
+    {
+       background-color:#72d75b !important;
+
+    }
+
+    h1,h2,h3,h4
+    {
+        font-family: Open Sans,sans-serif;
+    }
+
+    table th
+    {
+        background-color:#9f9f9f !important;
+    }
+    table.table, table.table td, table.table th
+    {
+        border-color:#9f9f9f !important;
+    }
+
+        
+    .timetable td.timetable-cells div.timecell.selected
+    {
+        border:color:red;border-radius:0px !important;
+
+    }
+    
+
+    .timecell.selected {
+        background-color:rgba(243,182,64,1.0) !important;border-radius:0px !important;color:white !important;;
+    }
+
+    .footer hr
+    {
+        background-color:#ffffff !important;
+    }
+    div.Box
+    {
+        background-color:#ffffff !important;
+        /* custom */
+        border-width:2px !important;
+        border-radius:0 !important;
+        -webkit-border-radius:0 !important;
+        -moz-border-radius:0 !important;
+        border-color:#c3c7c0 !important;
+
+    }
+    div.Box h1,h2,h3, .breadcrumb > li, .breadcrumb > li a
+    {
+        color:#ffffff !important;
+    }
+
+    .btn-primary
+    {
+        color: #ffffff;
+	    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #4572ca;
+	    *background-color: #4572ca;
+	    background-image: -moz-linear-gradient(top, #4572ca, #4572ca);
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4572ca), to(#4572ca));
+	    background-image: -webkit-linear-gradient(top, #4572ca, #4572ca);
+	    background-image: -o-linear-gradient(top, #4572ca, #4572ca);
+	    background-image: linear-gradient(to bottom, #4572ca, #4572ca);
+	    background-repeat: repeat-x;
+        border-color: #4572ca;
+	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4572ca', endColorstr='#4572ca', GradientType=0);
+	    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        Regular;min-width:120px !important;font-family:Verdana, Geneva, &#39;DejaVu Sans&#39;, sans-serif !important;text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25) !important;box-shadow:inset 0 0px 0 rgba(255,255,255,.2), 0 0px 0px rgba(255,255,255,.05) !important;font-size:17.5px !important;
+
+    }
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .btn-primary.disabled,
+    .btn-primary[disabled]
+    {
+        color: #ffffff;
+	    background-color: #4572ca;
+	    *background-color: #003bb3;
+    }
+
+    .btn-info
+    {
+        color: #ffffff;
+        background-color: #a7afbe;
+	    *background-color: #a7afbe;
+	    background-image: -moz-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a7afbe), to(#a7afbe));
+	    background-image: -webkit-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -o-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: linear-gradient(to bottom, #a7afbe, #a7afbe);
+	    background-repeat: repeat-x;
+        border-color: #a7afbe;
+	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a7afbe', endColorstr='#a7afbe', GradientType=0);
+	    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        font-family:Verdana, Geneva, &#39;DejaVu Sans&#39;, sans-serif !important;text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25) !important;box-shadow:inset 0 0px 0 rgba(255,255,255,.2), 0 0px 0px rgba(255,255,255,.05) !important;font-size:17.5px !important;
+
+    }
+    .btn-info:hover,
+    .btn-info:focus,
+    .btn-info:active,
+    .btn-info.active,
+    .btn-info.disabled,
+    .btn-info[disabled]
+    {
+        color: #ffffff;
+	    background-color: #a7afbe;
+	    *background-color: #003bb3;
+    }
+
+    /*custom*/
+    .btn-primary[name="TimeSearchFirstAvailableButton"]{
+        color: #ffffff;
+        background-color: #a7afbe;
+	    *background-color: #a7afbe;
+	    background-image: -moz-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a7afbe), to(#a7afbe));
+	    background-image: -webkit-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -o-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: linear-gradient(to bottom, #a7afbe, #a7afbe);
+	    background-repeat: repeat-x;
+        border-color: #a7afbe;
+	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a7afbe', endColorstr='#a7afbe', GradientType=0);
+	    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        font-family:Verdana, Geneva, &#39;DejaVu Sans&#39;, sans-serif !important;text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25) !important;box-shadow:inset 0 0px 0 rgba(255,255,255,.2), 0 0px 0px rgba(255,255,255,.05) !important;font-size:17.5px !important;
+
+    }
+
+    .cellcontainer,.hinted div{
+        border-radius:0px !important;
+        border:1px solid #FFFFFF !important;
+    }
+
+    .timecell
+    {
+        border-radius:0px !important;
+
+    }
+
+    .timetable
+    {
+        background-color:#c3c7c0;
+        color:white;
+    }
+    .timetable td.timetable-times div
+    {
+        background-color:#c3c7c0;
+
+    }
+    .timetable-times
+    {
+        background-color:#c3c7c0;
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .timecell
+    {
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .cellcontainer
+    {
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .timetable td.timetable-times div
+    {
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .form-horizontal .control-freetext
+    {
+        font-weight:bold;
+    }
+
+    .form-horizontal .control-label
+    {
+       font-weight:normal !important;
+        margin-bottom:0;
+    }
+
+    .form-horizontal .control-group
+    {
+        margin-left:16px;
+        magrin-bottom:0;
+    }
+
+    a[data-function="navLink"]
+    {
+        font-size:12px !important;
+        width:25%;
+        height:20px;
+        padding:0;
+        margin:0;
+    }
+
+    #selectionText
+    {
+        background-color:#f3b640;
+        color:#ffffff;
+        padding-left:8px;
+    }
+
+    #timeSelectionText
+    {
+        background-color:#f3b640;
+        color:#ffffff;
+        padding-right:8px;
+    }
+
+    .currentPageNode
+    {
+        background-color:#7cd1f5 !important;
+    }
+
+    .breadcrumb
+    {
+        background-color:#ffffff !important;
+        margin:0 0 10px 25px;
+    }
+
+    .breadcrumb  li
+    {
+        font-size:10px;
+        padding:5px 5px 5px 5px;
+        width:100px;
+        background-color:#c3c7c0;
+        text-align:center;
+        border:4px solid white;
+    }
+
+    hr
+    {
+        border:1px solid #000;
+    }
+</style>
+
+    <style type="text/css">
+.flag_sv-SE { width:31px;}
+.flag_en-GB { width:32px;}
+.helper_text { width:24px;}
+.flag_nb-NO { width:27px;}
+.flag_ru-RU { width:33px;}
+.flag_da-DK { width:31px;}
+.flag_hr-HR { width:33px;}
+.flag_pl-PL { width:31px;}
+.flag_el-GR { width:30px;}
+.flag_lt-LT { width:40px;}
+.flag_es-AR { width:30px;}
+.flag_mt-MT { width:33px;}
+
+    </style>
+    
+
+    <script src="./payment-IDCard_files/jquery"></script>
+
+    
+    <script src="./payment-IDCard_files/init.js"></script>
+
+    
+</head>
+<body data-new-gr-c-s-check-loaded="14.1037.0" data-gr-ext-installed="" style="">
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar btn-info" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <img class="brand logotype" src="./payment-IDCard_files/SkatteverketLogo.png" alt="Logotyp">
+
+                <div class="nav-collapse">
+                    <!-- .nav, .navbar-search, .navbar-form, etc -->
+                    
+                    <div class="language-bar">
+                        <table>
+                            <tbody><tr>
+                                    <td class="Center">
+                                            <a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=sv-SE">
+                                                &nbsp;
+                                                <img class="flag_sv-SE" id="flag_sv-SE" src="./payment-IDCard_files/flag_sv-SE.png" alt="Svenska">&nbsp;
+                                            </a>
+                                    </td>
+                                    <td class="Center">
+                                            <a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=en-GB">
+                                                &nbsp;
+                                                <img class="flag_en-GB" id="flag_en-GB" src="./payment-IDCard_files/flag_en-GB.png" alt="English">&nbsp;
+                                            </a>
+                                    </td>
+                                
+                                <td>&nbsp;</td>
+                                    <td>
+                                        <a href="javascript:window.print();">
+                                            <img id="Printer" src="./payment-IDCard_files/Printer.png" alt="Print">
+                                        </a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                    <td>
+                                            &nbsp;<a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=sv-SE">Svenska</a>&nbsp;
+                                    </td>
+                                    <td>
+                                            &nbsp;<a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=en-GB">English</a>&nbsp;
+                                    </td>
+                                
+                                <td>&nbsp;</td>
+                                    <td><a href="javascript:window.print();">Print</a></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row-fluid">
+            <div id="ContentColumn" class="span12">
+
+                <ul class="breadcrumb">
+                    
+    
+<li><a href="https://ssc.nemoq.se/Booking/Booking/Previous/SSC?id=6">Start (restart)</a></li>
+<li><a href="https://ssc.nemoq.se/Booking/Booking/Previous/SSC?id=5">Agreement</a></li>
+<li><a href="https://ssc.nemoq.se/Booking/Booking/Previous/SSC?id=4">Conditions to apply</a></li>
+<li><a href="https://ssc.nemoq.se/Booking/Booking/Previous/SSC?id=3">Select time with overview</a></li>
+<li><a href="https://ssc.nemoq.se/Booking/Booking/Previous/SSC?id=2">Personal data</a></li>
+<li><a href="https://ssc.nemoq.se/Booking/Booking/Previous/SSC?id=1">Contact information</a></li>
+<li class="currentPageNode">Payment</li>
+<li>Summary</li>
+
+
+                </ul>
+
+                <div id="Main" class="">
+                    
+
+
+
+<div class="header">
+    <h1>Payment</h1>
+</div>
+
+
+
+    <p><b>We need your payment before your appointment</b><br><br>
+
+You will need to show a proof of payment. Therefore we ask you to pay well in advance, in order for the payment to have arrived by the time of your appointment.<br><br>
+
+The fee of 400 SEK (per person) is for your application to be assessed by the Tax Agency. This means that you will not be refunded if your application is refused.<br><br><br>
+
+</p><div class="Box">
+<h2 style="background-color: #f3b640 !important; border-color: #9f9f9f !important"> The payment can be made online:</h2>
+<b>Bankgiro:</b><br>
+389-0100 (swedbank)<br><br>
+
+<b>OCR:</b><br>
+The personal number of the applicant
+</div><br>
+
+<div class="Box">
+<h2 style="background-color: #f3b640 !important; border-color: #9f9f9f !important"> If the payment is made from abroad: </h2>
+<b>Iban (International Bank Account Number)</b><br>
+SE55 1200 0000 0128 1012 1613<br><br>
+
+<b>Swift/BIC</b><br>
+DABASESX<br><br>
+
+Danske Bank<br>
+Norrmalmstorg 1<br>
+S-103 92 Stockholm
+</div><br>
+
+<p></p>
+<p> </p>
+
+<form action="https://ssc.nemoq.se/Booking/Booking/Next/SSC" class="form-horizontal" method="post"><input name="__RequestVerificationToken" type="hidden" value="6yCJdlYOESNDu3tWB7QekZPklwdtNpCSfVFhZ1YGnTSgzmIqG4_XGYDesEk4Ih1uRS1zvFQYrsJUklnCdZMfS6neCgAHSnWxNxsAGFNyM3p7pNrLodbieQFV88yKYE4VxWmSXSoPF0Df1kAJjaXXWzdX95OJNum_vIInEDy7I5k1">    <div class="Box">
+        <h2>
+            Payment
+            <img alt="Help instructions" class="helper_text" onclick="alert(&#39;Agree to the terms and conditions&#39;);" src="./payment-IDCard_files/ic_help_white_24dp.png" tabindex="0" title="Agree to the terms and conditions">
+        </h2>
+        
+                <label class="checkbox" for="RequiresConditionalAgreement">
+                    <input id="RequiresConditionalAgreement" name="AcceptConditionalAgreement" required="required" tabindex="0" type="checkbox" value="true"><input name="AcceptConditionalAgreement" type="hidden" value="false">
+                    I acknowledge that I have read the information about the payment for my ID-card.
+                </label>
+            
+    </div>
+    <div class="btn-toolbar">
+        <a class="btn btn-info" href="https://ssc.nemoq.se/Booking/Booking/Previous/SSC">Previous</a>
+        <input class="btn btn-primary pull-right disable-on-save" type="submit" name="Next" value="Next">
+    </div>
+</form>
+                </div>
+
+                <footer class="footer">
+                    <hr>
+                    <div>
+                        <a href="https://ssc.nemoq.se/Booking/Info/Cookies/SSC" target="_blank">Cookies</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="https://www.statenssc.se/" target="_blank">Statens servicecenter</a>
+                                            </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".DatePicker").datepicker({
+            showOn: 'both',
+            buttonImage: '/Booking/Resources/Images/base_calendar_16.png',
+            buttonImageOnly: true, 
+
+		    closeText: 'Done',
+		    prevText: 'Prev',
+		    nextText: 'Next',
+		    currentText: 'Today',
+		    monthNames: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+		    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+		    dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+		    dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+		    weekHeader: 'Wk',
+		    dateFormat: 'dd.mm.yy',
+		    firstDay: 1,
+		    isRTL: false,
+		    showMonthAfterYear: false,
+		    yearSuffix: '',
+
+            changeMonth: true,
+            changeYear: true,
+            constrainInput: true,
+            //maxDate: "+0d",
+            selectOtherMonths: true,
+            showAnim: "",
+            showOtherMonths: true,
+            showWeek: true
+        }).attr("autocomplete", "off"); // Turn off browser autocomplete for datepickers
+    });
+</script>
+    
+    
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

@@ -1,0 +1,130 @@
+import java.lang.Math;
+
+public class StateAndReward {
+
+	
+	/* State discretization function for the angle controller */
+	public static String getStateAngle(double angle, double vx, double vy) {
+		
+		double angleDeg = angle * 180/Math.PI;
+		
+		String state = "";
+		int nrValuesAngle = 20;                                      
+		int discAngle = discretize(angleDeg, nrValuesAngle, -90, 90);
+		state += discAngle;  
+		
+		return state;
+	}
+
+	/* Reward function for the angle controller */
+	public static double getRewardAngle(double angle, double vx, double vy) {
+				
+		double reward = 0;
+		
+		reward += 30*Math.exp(-Math.abs(angle)); 
+
+		
+		return reward;
+	}
+
+	/* State discretization function for the full hover controller */
+	public static String getStateHover(double angle, double vx, double vy) {
+
+		
+		String state = "";
+				
+		int nrValuesVY = 15;                            
+		int discVY = discretize(vy, nrValuesVY, -3, 3);
+		state += discVY;                                
+		
+		
+		int nrValuesVX = 5;                             
+		int discVX = discretize(vx, nrValuesVX, -10, 10);
+		state += discVX;                                 
+		
+
+		double angleDeg = angle * 180/Math.PI;
+		int nrValuesAngle = 20;                                      
+		int discAngle = discretize(angleDeg, nrValuesAngle, -90, 90);
+		state += discAngle;                                          
+				
+		return state;
+	}
+
+	/* Reward function for the full hover controller */
+	public static double getRewardHover(double angle, double vx, double vy) {
+		
+		double reward = 0;		
+		
+		if(Math.abs(vy) > 5) return 0; 
+		reward += 15*Math.exp(-Math.abs(vy));
+		reward += 10*Math.exp(-Math.abs(vx));
+		reward += 30*Math.exp(-Math.abs(angle)); 
+		
+
+
+		return reward;
+	}
+
+	// ///////////////////////////////////////////////////////////
+	// discretize() performs a uniform discretization of the
+	// value parameter.
+	// It returns an integer between 0 and nrValues-1.
+	// The min and max parameters are used to specify the interval
+	// for the discretization.
+	// If the value is lower than min, 0 is returned
+	// If the value is higher than min, nrValues-1 is returned
+	// otherwise a value between 1 and nrValues-2 is returned.
+	//
+	// Use discretize2() if you want a discretization method that does
+	// not handle values lower than min and higher than max.
+	// ///////////////////////////////////////////////////////////
+	public static int discretize(double value, int nrValues, double min,
+			double max) {
+		if (nrValues < 2) {
+			return 0;
+		}
+
+		double diff = max - min;
+
+		if (value < min) {
+			return 0;
+		}
+		if (value > max) {
+			return nrValues - 1;
+		}
+
+		double tempValue = value - min;
+		double ratio = tempValue / diff;
+
+		return (int) (ratio * (nrValues - 2)) + 1;
+	}
+
+	// ///////////////////////////////////////////////////////////
+	// discretize2() performs a uniform discretization of the
+	// value parameter.
+	// It returns an integer between 0 and nrValues-1.
+	// The min and max parameters are used to specify the interval
+	// for the discretization.
+	// If the value is lower than min, 0 is returned
+	// If the value is higher than min, nrValues-1 is returned
+	// otherwise a value between 0 and nrValues-1 is returned.
+	// ///////////////////////////////////////////////////////////
+	public static int discretize2(double value, int nrValues, double min,
+			double max) {
+		double diff = max - min;
+
+		if (value < min) {
+			return 0;
+		}
+		if (value > max) {
+			return nrValues - 1;
+		}
+
+		double tempValue = value - min;
+		double ratio = tempValue / diff;
+
+		return (int) (ratio * nrValues);
+	}
+
+}

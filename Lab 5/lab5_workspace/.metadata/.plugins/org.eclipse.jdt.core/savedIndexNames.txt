@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/Users/manu/Desktop/Masters - LIU/Course/Sem 1/Period 1/TDDC17 Artificial Intelligence/Lab/Lab 5/lab5_workspace/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+1805941987.index
+1955509740.index
+21432985.index

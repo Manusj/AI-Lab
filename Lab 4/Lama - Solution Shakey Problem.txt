@@ -1,0 +1,333 @@
+mansj125@tlvm-4-4-1:~$ /courses/TDDC17/bin/downward/src/lama '/home/mansj125/Documents/Lab 4 - TDDDC17/shakeyDomain.pddl' '/home/mansj125/Documents/Lab 4 - TDDDC17/shakeyProbelm.pddl'
+1. Running translator
+Second argument is a file name: use two translator arguments.
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.007s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 52 rules.
+Computing model... [0.000s CPU, 0.002s wall-clock]
+164 relevant atoms
+166 auxiliary atoms
+330 final queue length
+403 total queue pushes
+Completing instantiation... [0.000s CPU, 0.002s wall-clock]
+Instantiating: [0.010s CPU, 0.012s wall-clock]
+Computing fact groups...
+Finding invariants...
+16 initial candidates
+Finding invariants: [0.000s CPU, 0.002s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+6 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.003s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.002s wall-clock]
+32 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+5 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.000s wall-clock]
+Translator variables: 11
+Translator derived variables: 0
+Translator facts: 38
+Translator goal facts: 4
+Translator mutex groups: 7
+Translator total mutex groups size: 34
+Translator operators: 76
+Translator axioms: 0
+Translator task size: 519
+Translator peak memory: 22128 KB
+Writing output... [0.000s CPU, 0.003s wall-clock]
+Done! [0.010s CPU, 0.024s wall-clock]
+
+2. Running preprocessor
+Building causal graph...
+The causal graph is not acyclic.
+11 variables of 11 necessary
+2 of 7 mutex groups necessary.
+76 of 76 operators necessary.
+0 of 0 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor facts: 38
+Preprocessor derived variables: 0
+Preprocessor task size: 493
+Writing output...
+done
+
+
+3. Running search
+This is a unit task.
+reading input... [t=0s]
+Simplifying transitions... done!
+done reading input! [t=0s]
+building causal graph...done! [t=0s]
+packing state variables...Variables: 11
+Bytes per state: 4
+done! [t=0s]
+done initalizing global data [t=0s]
+Initializing Exploration...
+Generating landmarks using the RPG/SAS+ approach
+approx. reasonable orders
+approx. obedient reasonable orders
+Removed 0 reasonable or obedient reasonable orders
+Landmarks generation time: 0.00223273s
+Discovered 25 landmarks, of which 3 are disjunctive and 0 are conjunctive
+76 edges
+Initializing LAMA-FF Synergy Object
+Initializing landmarks count heuristic...
+9 initial landmarks, 4 goal landmarks
+Starting search: lazy_greedy(list(hff, hlm), preferred = list(hff, hlm))
+Conducting lazy best first search, (real) bound = 2147483647
+Best heuristic value: 16/16 [g=0, 1 evaluated, 0 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 15/15 [g=4, 5 evaluated, 4 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 14/14 [g=5, 6 evaluated, 5 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 12/12 [g=6, 7 evaluated, 6 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 11/11 [g=7, 8 evaluated, 7 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 10/11 [g=8, 9 evaluated, 8 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 10/10 [g=8, 10 evaluated, 9 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 9/9 [g=9, 12 evaluated, 11 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 8/9 [g=10, 13 evaluated, 12 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 8/8 [g=10, 14 evaluated, 13 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 7/7 [g=11, 16 evaluated, 15 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 6/6 [g=12, 17 evaluated, 16 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 5/5 [g=14, 19 evaluated, 18 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 4/5 [g=15, 20 evaluated, 19 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 3/4 [g=16, 21 evaluated, 20 expanded, t=0.01s, 4368 KB]
+Best heuristic value: 2/3 [g=19, 24 evaluated, 23 expanded, t=0.01s, 4500 KB]
+Best heuristic value: 2/2 [g=20, 25 evaluated, 24 expanded, t=0.01s, 4500 KB]
+Best heuristic value: 1/1 [g=21, 26 evaluated, 25 expanded, t=0.01s, 4500 KB]
+Solution found!
+Actual search time: 0s [t=0.01s]
+move_shakey s r1 r2 (1)
+move_shakey s r2 r3 (1)
+move_shakey s r3 r4 (1)
+switch_on s sw4 r4 bx sh1 (1)
+grab_ball s sh1 r4 ba3 (1)
+move_box s bx r4 r3 (1)
+switch_on s sw3 r3 bx sh2 (1)
+move_box s bx r3 r2 (1)
+switch_on s sw2 r2 bx sh2 (1)
+move_box s bx r2 r1 (1)
+putdown_ball s sh1 r1 ba3 (1)
+switch_on s sw1 r1 bx sh1 (1)
+move_shakey s r1 r2 (1)
+grab_ball s sh1 r2 ba1 (1)
+move_shakey s r2 r1 (1)
+putdown_ball s sh1 r1 ba1 (1)
+move_shakey s r1 r2 (1)
+move_shakey s r2 r3 (1)
+grab_ball s sh1 r3 ba2 (1)
+move_shakey s r3 r2 (1)
+move_shakey s r2 r1 (1)
+putdown_ball s sh1 r1 ba2 (1)
+Plan length: 22 step(s).
+Plan cost: 22
+Initial state h value: 16/16.
+Expanded 26 state(s).
+Reopened 0 state(s).
+Evaluated 27 state(s).
+Evaluations: 54
+Generated 123 state(s).
+Dead ends: 0 state(s).
+Best solution cost so far: 22
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 5)
+Conducting lazy best first search, (real) bound = 22
+Best heuristic value: 16/16 [g=0, 1 evaluated, 0 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 15/15 [g=4, 5 evaluated, 4 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 14/14 [g=5, 6 evaluated, 5 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 12/12 [g=6, 7 evaluated, 6 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 11/11 [g=7, 8 evaluated, 7 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 10/11 [g=8, 9 evaluated, 8 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 10/10 [g=8, 10 evaluated, 9 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 9/9 [g=9, 12 evaluated, 11 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 8/9 [g=10, 13 evaluated, 12 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 8/8 [g=10, 14 evaluated, 13 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 7/7 [g=11, 16 evaluated, 15 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 6/6 [g=12, 17 evaluated, 16 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 5/5 [g=14, 19 evaluated, 18 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 4/5 [g=15, 20 evaluated, 19 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 3/4 [g=16, 21 evaluated, 20 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 2/3 [g=19, 24 evaluated, 23 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 2/2 [g=20, 25 evaluated, 24 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 1/1 [g=21, 26 evaluated, 25 expanded, t=0.01s, 4620 KB]
+Solution found!
+Actual search time: 0s [t=0.01s]
+move_shakey s r1 r2 (1)
+move_shakey s r2 r3 (1)
+move_shakey s r3 r4 (1)
+switch_on s sw4 r4 bx sh1 (1)
+grab_ball s sh1 r4 ba3 (1)
+move_box s bx r4 r3 (1)
+switch_on s sw3 r3 bx sh2 (1)
+move_box s bx r3 r2 (1)
+switch_on s sw2 r2 bx sh2 (1)
+move_box s bx r2 r1 (1)
+putdown_ball s sh1 r1 ba3 (1)
+switch_on s sw1 r1 bx sh1 (1)
+move_shakey s r1 r2 (1)
+grab_ball s sh1 r2 ba1 (1)
+move_shakey s r2 r3 (1)
+grab_ball s sh2 r3 ba2 (1)
+move_shakey s r3 r2 (1)
+move_shakey s r2 r1 (1)
+putdown_ball s sh1 r1 ba1 (1)
+putdown_ball s sh2 r1 ba2 (1)
+Plan length: 20 step(s).
+Plan cost: 20
+Initial state h value: 16/16.
+Expanded 34 state(s).
+Reopened 1 state(s).
+Evaluated 35 state(s).
+Evaluations: 70
+Generated 157 state(s).
+Dead ends: 0 state(s).
+Best solution cost so far: 20
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 3)
+Conducting lazy best first search, (real) bound = 20
+Best heuristic value: 16/16 [g=0, 1 evaluated, 0 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 15/15 [g=4, 5 evaluated, 4 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 14/14 [g=5, 6 evaluated, 5 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 12/12 [g=6, 7 evaluated, 6 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 11/11 [g=7, 8 evaluated, 7 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 10/11 [g=8, 9 evaluated, 8 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 10/10 [g=8, 10 evaluated, 9 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 9/9 [g=9, 12 evaluated, 11 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 8/9 [g=10, 13 evaluated, 12 expanded, t=0.01s, 4620 KB]
+Best heuristic value: 8/8 [g=10, 14 evaluated, 13 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 7/7 [g=11, 16 evaluated, 15 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 6/6 [g=12, 17 evaluated, 16 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 5/5 [g=14, 19 evaluated, 18 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 4/5 [g=15, 20 evaluated, 19 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 3/4 [g=16, 21 evaluated, 20 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 3/3 [g=17, 25 evaluated, 24 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 2/2 [g=18, 26 evaluated, 25 expanded, t=0.01s, 4624 KB]
+Best heuristic value: 1/1 [g=19, 27 evaluated, 26 expanded, t=0.01s, 4624 KB]
+Solution found!
+Actual search time: 0.03s [t=0.04s]
+move_shakey s r1 r2 (1)
+move_shakey s r2 r3 (1)
+move_shakey s r3 r4 (1)
+switch_on s sw4 r4 bx sh1 (1)
+grab_ball s sh1 r4 ba3 (1)
+move_box s bx r4 r3 (1)
+switch_on s sw3 r3 bx sh2 (1)
+grab_ball s sh2 r3 ba2 (1)
+move_box s bx r3 r2 (1)
+move_box s bx r2 r1 (1)
+putdown_ball s sh2 r1 ba2 (1)
+putdown_ball s sh1 r1 ba3 (1)
+switch_on s sw1 r1 bx sh1 (1)
+move_box s bx r1 r2 (1)
+switch_on s sw2 r2 bx sh1 (1)
+grab_ball s sh1 r2 ba1 (1)
+move_shakey s r2 r1 (1)
+putdown_ball s sh1 r1 ba1 (1)
+Plan length: 18 step(s).
+Plan cost: 18
+Initial state h value: 16/16.
+Expanded 796 state(s).
+Reopened 152 state(s).
+Evaluated 797 state(s).
+Evaluations: 1594
+Generated 3334 state(s).
+Dead ends: 0 state(s).
+Best solution cost so far: 18
+Solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 2)
+Conducting lazy best first search, (real) bound = 18
+Best heuristic value: 16/16 [g=0, 1 evaluated, 0 expanded, t=0.04s, 4872 KB]
+Best heuristic value: 15/15 [g=4, 5 evaluated, 4 expanded, t=0.04s, 4872 KB]
+Best heuristic value: 14/14 [g=5, 6 evaluated, 5 expanded, t=0.04s, 4872 KB]
+Best heuristic value: 12/12 [g=6, 7 evaluated, 6 expanded, t=0.04s, 4872 KB]
+Best heuristic value: 11/11 [g=7, 8 evaluated, 7 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 10/11 [g=8, 9 evaluated, 8 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 10/10 [g=8, 10 evaluated, 9 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 9/9 [g=9, 12 evaluated, 11 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 8/9 [g=10, 13 evaluated, 12 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 8/8 [g=10, 14 evaluated, 13 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 7/7 [g=11, 16 evaluated, 15 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 6/6 [g=12, 17 evaluated, 16 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 5/5 [g=14, 20 evaluated, 19 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 4/5 [g=15, 21 evaluated, 20 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 3/4 [g=16, 22 evaluated, 21 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 3/3 [g=17, 26 evaluated, 25 expanded, t=0.04s, 4876 KB]
+Best heuristic value: 2/3 [g=17, 43 evaluated, 42 expanded, 2 reopened, t=0.04s, 4876 KB]
+Best heuristic value: 2/2 [g=16, 204 evaluated, 203 expanded, 8 reopened, t=0.05s, 4876 KB]
+Best heuristic value: 1/1 [g=17, 205 evaluated, 204 expanded, 8 reopened, t=0.05s, 4876 KB]
+Completely explored state space -- no solution!
+Actual search time: 0.44s [t=0.48s]
+Initial state h value: 16/16.
+Expanded 24632 state(s).
+Reopened 4439 state(s).
+Evaluated 24632 state(s).
+Evaluations: 49264
+Generated 88285 state(s).
+Dead ends: 0 state(s).
+Best solution cost so far: 18
+No solution found - keep searching
+Starting search: lazy_wastar(list(hff, hlm), preferred = list(hff, hlm), w = 1)
+Conducting lazy best first search, (real) bound = 18
+Best heuristic value: 16/16 [g=0, 1 evaluated, 0 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 15/15 [g=4, 5 evaluated, 4 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 14/14 [g=5, 7 evaluated, 6 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 12/12 [g=6, 10 evaluated, 9 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 11/11 [g=7, 11 evaluated, 10 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 10/11 [g=8, 14 evaluated, 13 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 10/10 [g=8, 15 evaluated, 14 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 9/9 [g=9, 17 evaluated, 16 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 8/9 [g=9, 20 evaluated, 19 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 8/8 [g=10, 26 evaluated, 25 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 7/7 [g=11, 33 evaluated, 32 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 6/7 [g=11, 41 evaluated, 40 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 5/6 [g=12, 43 evaluated, 42 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 4/5 [g=13, 47 evaluated, 46 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 3/4 [g=14, 57 evaluated, 56 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 3/3 [g=15, 84 evaluated, 83 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 2/2 [g=16, 90 evaluated, 89 expanded, t=0.48s, 9104 KB]
+Best heuristic value: 1/1 [g=17, 95 evaluated, 94 expanded, t=0.48s, 9104 KB]
+Completely explored state space -- no solution!
+Actual search time: 0.38s [t=0.86s]
+Initial state h value: 16/16.
+Expanded 22818 state(s).
+Reopened 2625 state(s).
+Evaluated 22818 state(s).
+Evaluations: 45636
+Generated 81427 state(s).
+Dead ends: 0 state(s).
+Best solution cost so far: 18
+No solution found - keep searching
+Actual search time: 0.85s [t=0.86s]
+Cumulative statistics:
+Expanded 48306 state(s).
+Reopened 7217 state(s).
+Evaluated 48309 state(s).
+Evaluations: 96618
+Generated 173326 state(s).
+Dead ends: 0 state(s).
+Search time: 0.85s
+Total time: 0.86s
+Solution found.
+Peak memory: 9616 KB
+
+mansj125@tlvm-4-4-1:~$

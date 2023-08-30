@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://ssc.nemoq.se/Booking/Booking/Index/SSC -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <title>SSC</title>
+
+    
+    <link rel="stylesheet" href="./Booking info - ID Card_files/base.css">
+    <link rel="stylesheet" href="./Booking info - ID Card_files/jquery-ui.min.css">
+    <style type="text/css">
+    body
+    {
+        background-color:#f4f9fb !important;
+        font-family: Open Sans,sans-serif
+    }
+    a
+    {
+        font-family: Open Sans,sans-serif
+    }
+    .navbar, .navbar-inner
+    {
+        background-color:#ffffff !important;
+        box-shadow:2px 2px 4px #c3c7c0;
+        margin-bottom:15px;
+
+    }
+    #Main
+    {
+        margin-left:10px;
+        margin-right:10px;
+    }
+    #ContentColumn
+    {
+
+        background-color:#ffffff !important;
+        box-shadow:0px 0px 4px 1px #c3c7c0;
+    }
+    div.Box h1,h2,h3, div.Box, .breadcrumb
+    {
+        background-color:#f7963b !important;
+        border-color:#f7963b !important;
+        /*custom*/
+         border-width:2px !important;
+        border-radius:0 !important;
+        -webkit-border-radius:0 !important;
+        -moz-border-radius:0 !important;
+        border-color:#c3c7c0 !important;
+
+    }
+    Box h1,h2,h3,h4
+    {
+       background-color:#72d75b !important;
+
+    }
+
+    h1,h2,h3,h4
+    {
+        font-family: Open Sans,sans-serif;
+    }
+
+    table th
+    {
+        background-color:#9f9f9f !important;
+    }
+    table.table, table.table td, table.table th
+    {
+        border-color:#9f9f9f !important;
+    }
+
+        
+    .timetable td.timetable-cells div.timecell.selected
+    {
+        border:color:red;border-radius:0px !important;
+
+    }
+    
+
+    .timecell.selected {
+        background-color:rgba(243,182,64,1.0) !important;border-radius:0px !important;color:white !important;;
+    }
+
+    .footer hr
+    {
+        background-color:#ffffff !important;
+    }
+    div.Box
+    {
+        background-color:#ffffff !important;
+        /* custom */
+        border-width:2px !important;
+        border-radius:0 !important;
+        -webkit-border-radius:0 !important;
+        -moz-border-radius:0 !important;
+        border-color:#c3c7c0 !important;
+
+    }
+    div.Box h1,h2,h3, .breadcrumb > li, .breadcrumb > li a
+    {
+        color:#ffffff !important;
+    }
+
+    .btn-primary
+    {
+        color: #ffffff;
+	    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background-color: #4572ca;
+	    *background-color: #4572ca;
+	    background-image: -moz-linear-gradient(top, #4572ca, #4572ca);
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4572ca), to(#4572ca));
+	    background-image: -webkit-linear-gradient(top, #4572ca, #4572ca);
+	    background-image: -o-linear-gradient(top, #4572ca, #4572ca);
+	    background-image: linear-gradient(to bottom, #4572ca, #4572ca);
+	    background-repeat: repeat-x;
+        border-color: #4572ca;
+	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4572ca', endColorstr='#4572ca', GradientType=0);
+	    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        Regular;min-width:120px !important;font-family:Verdana, Geneva, &#39;DejaVu Sans&#39;, sans-serif !important;text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25) !important;box-shadow:inset 0 0px 0 rgba(255,255,255,.2), 0 0px 0px rgba(255,255,255,.05) !important;font-size:17.5px !important;
+
+    }
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .btn-primary.disabled,
+    .btn-primary[disabled]
+    {
+        color: #ffffff;
+	    background-color: #4572ca;
+	    *background-color: #003bb3;
+    }
+
+    .btn-info
+    {
+        color: #ffffff;
+        background-color: #a7afbe;
+	    *background-color: #a7afbe;
+	    background-image: -moz-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a7afbe), to(#a7afbe));
+	    background-image: -webkit-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -o-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: linear-gradient(to bottom, #a7afbe, #a7afbe);
+	    background-repeat: repeat-x;
+        border-color: #a7afbe;
+	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a7afbe', endColorstr='#a7afbe', GradientType=0);
+	    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        font-family:Verdana, Geneva, &#39;DejaVu Sans&#39;, sans-serif !important;text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25) !important;box-shadow:inset 0 0px 0 rgba(255,255,255,.2), 0 0px 0px rgba(255,255,255,.05) !important;font-size:17.5px !important;
+
+    }
+    .btn-info:hover,
+    .btn-info:focus,
+    .btn-info:active,
+    .btn-info.active,
+    .btn-info.disabled,
+    .btn-info[disabled]
+    {
+        color: #ffffff;
+	    background-color: #a7afbe;
+	    *background-color: #003bb3;
+    }
+
+    /*custom*/
+    .btn-primary[name="TimeSearchFirstAvailableButton"]{
+        color: #ffffff;
+        background-color: #a7afbe;
+	    *background-color: #a7afbe;
+	    background-image: -moz-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a7afbe), to(#a7afbe));
+	    background-image: -webkit-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: -o-linear-gradient(top, #a7afbe, #a7afbe);
+	    background-image: linear-gradient(to bottom, #a7afbe, #a7afbe);
+	    background-repeat: repeat-x;
+        border-color: #a7afbe;
+	    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a7afbe', endColorstr='#a7afbe', GradientType=0);
+	    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        font-family:Verdana, Geneva, &#39;DejaVu Sans&#39;, sans-serif !important;text-shadow: 0 0px 0 rgba(255, 255, 255, 0.25) !important;box-shadow:inset 0 0px 0 rgba(255,255,255,.2), 0 0px 0px rgba(255,255,255,.05) !important;font-size:17.5px !important;
+
+    }
+
+    .cellcontainer,.hinted div{
+        border-radius:0px !important;
+        border:1px solid #FFFFFF !important;
+    }
+
+    .timecell
+    {
+        border-radius:0px !important;
+
+    }
+
+    .timetable
+    {
+        background-color:#c3c7c0;
+        color:white;
+    }
+    .timetable td.timetable-times div
+    {
+        background-color:#c3c7c0;
+
+    }
+    .timetable-times
+    {
+        background-color:#c3c7c0;
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .timecell
+    {
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .cellcontainer
+    {
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .timetable td.timetable-times div
+    {
+        border:1px solid #c3c7c0 !important;
+    }
+
+    .form-horizontal .control-freetext
+    {
+        font-weight:bold;
+    }
+
+    .form-horizontal .control-label
+    {
+       font-weight:normal !important;
+        margin-bottom:0;
+    }
+
+    .form-horizontal .control-group
+    {
+        margin-left:16px;
+        magrin-bottom:0;
+    }
+
+    a[data-function="navLink"]
+    {
+        font-size:12px !important;
+        width:25%;
+        height:20px;
+        padding:0;
+        margin:0;
+    }
+
+    #selectionText
+    {
+        background-color:#f3b640;
+        color:#ffffff;
+        padding-left:8px;
+    }
+
+    #timeSelectionText
+    {
+        background-color:#f3b640;
+        color:#ffffff;
+        padding-right:8px;
+    }
+
+    .currentPageNode
+    {
+        background-color:#7cd1f5 !important;
+    }
+
+    .breadcrumb
+    {
+        background-color:#ffffff !important;
+        margin:0 0 10px 25px;
+    }
+
+    .breadcrumb  li
+    {
+        font-size:10px;
+        padding:5px 5px 5px 5px;
+        width:100px;
+        background-color:#c3c7c0;
+        text-align:center;
+        border:4px solid white;
+    }
+
+    hr
+    {
+        border:1px solid #000;
+    }
+</style>
+
+    <style type="text/css">
+.flag_sv-SE { width:31px;}
+.flag_en-GB { width:32px;}
+.helper_text { width:24px;}
+.flag_nb-NO { width:27px;}
+.flag_ru-RU { width:33px;}
+.flag_da-DK { width:31px;}
+.flag_hr-HR { width:33px;}
+.flag_pl-PL { width:31px;}
+.flag_el-GR { width:30px;}
+.flag_lt-LT { width:40px;}
+.flag_es-AR { width:30px;}
+.flag_mt-MT { width:33px;}
+
+    </style>
+    
+
+    <script src="./Booking info - ID Card_files/jquery"></script>
+
+    
+    <script src="./Booking info - ID Card_files/init.js"></script>
+
+    
+</head>
+<body data-new-gr-c-s-check-loaded="14.1037.0" data-gr-ext-installed="" style="">
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar btn-info" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <img class="brand logotype" src="./Booking info - ID Card_files/ssc_logo.jpg" alt="Logotyp">
+
+                <div class="nav-collapse">
+                    <!-- .nav, .navbar-search, .navbar-form, etc -->
+                    
+                    <div class="language-bar">
+                        <table>
+                            <tbody><tr>
+                                    <td class="Center">
+                                            <a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=sv-SE">
+                                                &nbsp;
+                                                <img class="flag_sv-SE" id="flag_sv-SE" src="./Booking info - ID Card_files/flag_sv-SE.png" alt="Svenska">&nbsp;
+                                            </a>
+                                    </td>
+                                    <td class="Center">
+                                            <a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=en-GB">
+                                                &nbsp;
+                                                <img class="flag_en-GB" id="flag_en-GB" src="./Booking info - ID Card_files/flag_en-GB.png" alt="English">&nbsp;
+                                            </a>
+                                    </td>
+                                
+                                <td>&nbsp;</td>
+                                    <td>
+                                        <a href="javascript:window.print();">
+                                            <img id="Printer" src="./Booking info - ID Card_files/Printer.png" alt="Print">
+                                        </a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                    <td>
+                                            &nbsp;<a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=sv-SE">Svenska</a>&nbsp;
+                                    </td>
+                                    <td>
+                                            &nbsp;<a href="https://ssc.nemoq.se/Booking/Booking/SetLanguage/SSC?code=en-GB">English</a>&nbsp;
+                                    </td>
+                                
+                                <td>&nbsp;</td>
+                                    <td><a href="javascript:window.print();">Print</a></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row-fluid">
+            <div id="ContentColumn" class="span12">
+
+                <ul class="breadcrumb">
+                    
+                </ul>
+
+                <div id="Main" class="">
+                    
+
+
+<div class="header">
+    <h1>Booking confirmation</h1>
+</div>
+
+<p><b><big>You will receive your confirmation soon.</big></b><br><br>
+
+At the service office you can register your arrival with your booking number, phone number or QR-code. You only receive the QR-code if you have chosen email as your confirmation. <br><br>
+
+Make sure to be on time for your appointment, if you miss it the appointment will automatically be cancelled. You might have to wait a bit even though you have an appointment. <br><br><br>
+
+	</p><div class="control-group">
+	<div class="control-label" for="checkInfo" style="float:left; width: 50px; height: 50px; vertical-align: middle; line-height: 50px;  text-align: center; display:inline-block; font-size:30px; background-color:rgb(76,175,80); color: white; border-radius: 30px; margin-right: 20px;">✔</div>
+	
+	<div class="controls" style="padding-top:15px">
+<div class="control-freetext" id="checkInfo" style="float:left; overflow-wrap: break-word; width: calc(100% - 70px);"><b><p><big>Check that the contact information is correct</big></p></b></div><br><br>
+</div></div><br><br>
+
+	<div class="control-group">
+	<div class="control-label" for="checkInfo" style="float:left; width: 50px; height: 50px; vertical-align: middle; line-height: 50px;  text-align: center; display:inline-block; font-size:30px; background-color:rgb(76,175,80); color: white; border-radius: 30px; margin-right: 20px;">✔</div>
+	
+	<div class="controls" style="padding-top:15px">
+<div class="control-freetext" id="checkInfo2" style="float:left; overflow-wrap: break-word; width: calc(100% - 70px);"><b><p><big>Pay in good time before the appointment</big></p></b></div><br><br>
+</div></div><br><br>
+
+<script type="text/javascript">
+$(document).on('ready',function()  {
+var extraBox = $.parseHTML('<div class="Box">            <h2 style= "background-color: #fe6363!important; border-color: #9f9f9f !important">                Don´t forget            </h2>                        <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Don´t forget</b></label>                <div class="controls">                    <b class="control-freetext" style="font-weight:normal !important;">Payment 400kr per person. Follow the steps below or contact us for more information</b>                </div>            </div>                            <div class="control-group control-group-display control-group-minimized">                    <label class="control-label"><b>The payment can be done online:</b></label>                    <div class="controls">                        <span class="control-freetext" style="font-weight:normal !important;"></span>                    </div>                </div>            <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Bankgiro:</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">389-0100 (swedbank)</span>                </div>            </div>                        <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>OCR/Message:</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">The personal number of the applicant/applicants</span>                </div>            </div><hr />                    <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>If the payment is done from abroad:</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;"></span>                </div>            </div>            <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Iban (International Bank Account Number)</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">SE55 1200 0000 0128 1012 1613</span>                </div>            </div>             <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Swift/BIC</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">DABASESX</span>                </div>            </div>            <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b></b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">Danske Bank Norrmalmstorg 1 S-103 92 Stockholm</span>                </div>            </div>    </div>');
+var box = $(extraBox).insertBefore('.btn-toolbar');
+});
+</script><p></p>
+
+<form action="https://ssc.nemoq.se/Booking/Booking/ReturnToStart/SSC" class="form-horizontal" method="post"><input name="__RequestVerificationToken" type="hidden" value="Z6dSwjGB8WlH_trX8q-zl-bb3E9h9NKOSSW85wZtGYd2yRDzqBi97YZERCjSyVxjQ0ivKeHaYN4Oa0EKnG7AOTsKhBiQDvQOQ8NjVup8t6x3MOOa_qjeBh8I0P2IrizNCixh0RyqCB078MgygGtxGcEhX81Owo9ui1MFgtnIW1c1">    <div class="Box">
+        <h2>
+            Your booking information
+            <img alt="Help instructions" class="helper_text" onclick="alert(&#39;Your booking is now completed. Please arrive on time. You will need the booking number upon arrival.&#39;);" src="./Booking info - ID Card_files/ic_help_white_24dp.png" tabindex="0" title="Your booking is now completed. Please arrive on time. You will need the booking number upon arrival.">
+        </h2>
+        
+        <div class="control-group control-group-display control-group-minimized">
+            <label class="control-label" for="BookingNumber"><b>Booking number:</b></label>
+            <div class="controls">
+                <b class="control-freetext">65655348</b>
+            </div>
+        </div>
+        
+            <div class="control-group control-group-display control-group-minimized">
+                <label class="control-label" for="BookedDateTime">Time:</label>
+                <div class="controls">
+                    <span class="control-freetext">08.12.2021 15:15</span>
+                </div>
+            </div>
+        <div class="control-group control-group-display control-group-minimized">
+            <label class="control-label" for="BookedSectionName">Servicekontor:</label>
+            <div class="controls">
+                <span class="control-freetext">Linköping</span>
+            </div>
+        </div>
+        
+        <div class="control-group control-group-display control-group-minimized">
+            <label class="control-label" for="BookedServiceGroupName"> </label>
+            <div class="controls">
+                <span class="control-freetext"> ID-card</span>
+            </div>
+        </div>
+        
+        
+        
+        <div class="control-group control-group-display control-group-minimized">
+            <label class="control-label" for="NumberOfPeople">Number of people:</label>
+            <div class="controls">
+                <span class="control-freetext">1</span>
+            </div>
+        </div>
+    </div>
+    <div class="Box">            <h2 style="background-color: #fe6363!important; border-color: #9f9f9f !important">                Don´t forget            </h2>                        <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Don´t forget</b></label>                <div class="controls">                    <b class="control-freetext" style="font-weight:normal !important;">Payment 400kr per person. Follow the steps below or contact us for more information</b>                </div>            </div>                            <div class="control-group control-group-display control-group-minimized">                    <label class="control-label"><b>The payment can be done online:</b></label>                    <div class="controls">                        <span class="control-freetext" style="font-weight:normal !important;"></span>                    </div>                </div>            <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Bankgiro:</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">389-0100 (swedbank)</span>                </div>            </div>                        <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>OCR/Message:</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">The personal number of the applicant/applicants</span>                </div>            </div><hr>                    <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>If the payment is done from abroad:</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;"></span>                </div>            </div>            <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Iban (International Bank Account Number)</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">SE55 1200 0000 0128 1012 1613</span>                </div>            </div>             <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b>Swift/BIC</b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">DABASESX</span>                </div>            </div>            <div class="control-group control-group-display control-group-minimized">                <label class="control-label"><b></b></label>                <div class="controls">                    <span class="control-freetext" style="font-weight:normal !important;">Danske Bank Norrmalmstorg 1 S-103 92 Stockholm</span>                </div>            </div>    </div><div class="btn-toolbar text-right">
+        <input class="btn btn-primary disable-on-save" type="submit" name="NextButtonID1" value="Back to start">
+    </div>
+</form>
+                </div>
+
+                <footer class="footer">
+                    <hr>
+                    <div>
+                        <a href="https://ssc.nemoq.se/Booking/Info/Cookies/SSC" target="_blank">Cookies</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="https://www.statenssc.se/" target="_blank">Statens servicecenter</a>
+                                            </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".DatePicker").datepicker({
+            showOn: 'both',
+            buttonImage: '/Booking/Resources/Images/base_calendar_16.png',
+            buttonImageOnly: true, 
+
+		    closeText: 'Done',
+		    prevText: 'Prev',
+		    nextText: 'Next',
+		    currentText: 'Today',
+		    monthNames: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+		    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+		    dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+		    dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+		    weekHeader: 'Wk',
+		    dateFormat: 'dd.mm.yy',
+		    firstDay: 1,
+		    isRTL: false,
+		    showMonthAfterYear: false,
+		    yearSuffix: '',
+
+            changeMonth: true,
+            changeYear: true,
+            constrainInput: true,
+            //maxDate: "+0d",
+            selectOtherMonths: true,
+            showAnim: "",
+            showOtherMonths: true,
+            showWeek: true
+        }).attr("autocomplete", "off"); // Turn off browser autocomplete for datepickers
+    });
+</script>
+    
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
